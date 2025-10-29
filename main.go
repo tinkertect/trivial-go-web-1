@@ -12,8 +12,13 @@ func printTime(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "time is %s\n", t.Format("2006-01-02 15:04:05"))
 }
 
+func printHello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "hello world")
+}
+
 func main() {
 	http.HandleFunc("/", printTime)
+	http.HandleFunc("/hello", printHello)
 
 	fmt.Println("about to start listening on port 8000")
 

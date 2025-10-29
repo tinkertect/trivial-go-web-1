@@ -1,0 +1,1 @@
+docker build -t trivial-go-web-1 .
